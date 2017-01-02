@@ -1,2 +1,6 @@
 #!/usr/bin/env node
-+ console.log('Welcome to the Brain Games!');
+
+// @flow
+
+const helloMessage: string = 'Welcome to the Brain Games!';
+console.log(helloMessage);
