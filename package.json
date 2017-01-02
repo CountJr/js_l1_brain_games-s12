@@ -42,7 +42,7 @@
     "babel-node": "babel-node -- ",
     "flow": "flow",
     "flow-typed": "flow-typed",
-    "eslint": "eslint ./"
+    "eslint": "eslint"
   },
   "repository": {
     "type": "git",
