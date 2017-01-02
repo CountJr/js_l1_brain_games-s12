@@ -9,7 +9,10 @@ index e69de29..fd806df 100644
 +    enabled: true
 +    config:
 +      languages:
++      - ruby
 +      - javascript
++      - python
++      - php
 +  eslint:
 +    enabled: true
 +  fixme:
@@ -20,6 +23,9 @@ index e69de29..fd806df 100644
 +  - "**.js"
 +  - "**.jsx"
 +  - "**.module"
++  - "**.php"
++  - "**.py"
++  - "**.rb"
 +exclude_paths: []
 diff --git a/.eslintignore b/.eslintignore
 index e69de29..96212a3 100644
