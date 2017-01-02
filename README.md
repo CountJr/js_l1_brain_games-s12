@@ -1,1 +1,6 @@
-# js_l1_brain_games-s12
+### Install
+
+```sh
+vagrant up
+vagrant ssh
+```
