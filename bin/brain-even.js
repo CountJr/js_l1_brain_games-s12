@@ -5,7 +5,7 @@
 
 import readlineSync from 'readline-sync';
 
-const maxRandomNumbers = 3;
+const maxRandomNumbers: number = 3;
 
 const randomNumbers = () => {
   const arr = [];
@@ -16,12 +16,12 @@ const randomNumbers = () => {
   return arr;
 };
 
-const getAnswear = () => {
+const getAnswer = () => {
   while (true) {
-    const answear = readlineSync.question('Your answer: ');
-    if (answear === 'yes') {
+    const answer = readlineSync.question('Your answer: ');
+    if (answer === 'yes') {
       return [true, 'yes', 'no'];
-    } else if (answear === 'no') {
+    } else if (answer === 'no') {
       return [false, 'no', 'yes'];
     }
 
@@ -36,14 +36,14 @@ console.log(`${helloMessage}\n`);
 const userName: string = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${userName}`);
 
-const result = randomNumbers().reduce((acc, value) => {
+const result: boolean = randomNumbers().reduce((acc, value) => {
   if (acc === false) {
     return acc;
   }
   console.log(`Question: ${value}`);
-  const answear = getAnswear();
-  const rightOrWrong = answear[0] === isOddNumber(value);
-  console.log(rightOrWrong ? 'Correct!' : `'${answear[1]}' is wrong answer ;(. Correct answer was '${answear[2]}'.`);
+  const answer = getAnswer();
+  const rightOrWrong = answer[0] === isOddNumber(value);
+  console.log(rightOrWrong ? 'Correct!' : `'${answer[1]}' is wrong answer ;(. Correct answer was '${answer[2]}'.`);
   return rightOrWrong;
 }, true);
 
