@@ -27,9 +27,9 @@ const isOddNumber = (num) => {
 };
 
 export default () => {
-  const helloMessage: string = 'Welcome to the Brain Games!\nAnswer "yes" if number odd otherwise answer "no".';
+  const helloMessage = 'Welcome to the Brain Games!\nAnswer "yes" if number odd otherwise answer "no".';
   console.log(`${helloMessage}\n`);
-  const userName: string = readlineSync.question('May I have your name? ');
+  const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}`);
 
   let success = true;
