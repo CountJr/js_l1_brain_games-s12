@@ -1,51 +1,25 @@
-/* eslint-disable no-console */
+// @flow
 
-import readlineSync from 'readline-sync';
-
-const gameRounds = 3;
-
-const randomNumber = () => Math.floor(Math.random() * 100);
-
-const getAnswer = () => {
-  for (;;) {
-    const answer = readlineSync.question('Your answer: ');
-    switch (answer) {
-      case 'yes':
-        return 'yes';
-      case 'no':
-        return 'no';
-      default:
-    }
-
-    console.log("Please, answear 'yes' or 'no'");
-  }
-};
+import game from '../index';
+import { randomNumber } from './functions';
 
 const isOddNumber = (num) => {
   const result = (num % 2) ? 'no' : 'yes';
   return result;
 };
 
+const makeQuestion = () =>
+  randomNumber(1, 99);
+
+const checkAnswer = answer =>
+  answer === 'yes' || answer === 'no';
+
 export default () => {
-  const helloMessage = 'Welcome to the Brain Games!\nAnswer "yes" if number odd otherwise answer "no".';
-  console.log(`${helloMessage}\n`);
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}`);
-
-  let success = true;
-
-  for (let i = 1; i <= gameRounds; i += 1) {
-    const value = randomNumber();
-    console.log(`Question: ${value}`);
-    const answer = getAnswer();
-    const correctAnswer = isOddNumber(value);
-    if (answer !== correctAnswer) {
-      success = false;
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}`);
-      break;
-    }
-    console.log('Correct!');
-  }
-
-  console.log(success ? `Congratulations, ${userName}!` : `Let's try again, ${userName}!`);
+  game(
+    'Answer "yes" if number odd otherwise answer "no".',
+    makeQuestion,
+    checkAnswer,
+    isOddNumber,
+    "Please, answear 'yes' or 'no'",
+  );
 };

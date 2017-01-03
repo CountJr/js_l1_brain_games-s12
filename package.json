@@ -1,5 +1,11 @@
 {
   "name": "brain-even",
+  "author": "countjr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CountJr/js_l1_brain_games-s12/issues"
+  },
+  "homepage": "https://github.com/CountJr/js_l1_brain_games-s12#readme",
   "version": "0.1.1",
   "description": "Brain Games",
   "main": "index.js",
@@ -48,11 +54,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CountJr/js_l1_brain_games-s12.git"
-  },
-  "author": "countjr",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/CountJr/js_l1_brain_games-s12/issues"
-  },
-  "homepage": "https://github.com/CountJr/js_l1_brain_games-s12#readme"
+  }
 }
