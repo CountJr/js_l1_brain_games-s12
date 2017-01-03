@@ -11,17 +11,20 @@ const getAnswer = () => {
     const answer = readlineSync.question('Your answer: ');
     switch (answer) {
       case 'yes':
-        return true;
+        return 'yes';
       case 'no':
-        return false;
+        return 'no';
       default:
     }
 
-    console.log('Please, answear \'yes\' or \'no\'');
+    console.log("Please, answear 'yes' or 'no'");
   }
 };
 
-const isOddNumber = num => !(num % 2);
+const isOddNumber = (num) => {
+  const result = (num % 2) ? 'no' : 'yes';
+  return result;
+};
 
 export default () => {
   const helloMessage: string = 'Welcome to the Brain Games!\nAnswer "yes" if number odd otherwise answer "no".';
@@ -35,9 +38,10 @@ export default () => {
     const value = randomNumber();
     console.log(`Question: ${value}`);
     const answer = getAnswer();
-    if (answer !== isOddNumber(value)) {
+    const correctAnswer = isOddNumber(value);
+    if (answer !== correctAnswer) {
       success = false;
-      console.log(`'${answer ? 'yes' : 'no'}' is wrong answer ;(. Correct answer was '${answer ? 'no' : 'yes'}`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}`);
       break;
     }
     console.log('Correct!');
