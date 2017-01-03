@@ -5,7 +5,7 @@ run:
 	npm run babel-node -- ./bin/$(G)
 
 lint:
-	npm run eslint -- bin
+	npm run eslint -- bin src
 
 install:
 	node
