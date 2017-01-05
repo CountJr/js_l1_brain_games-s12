@@ -34,10 +34,10 @@ export default (
   let success = true;
   const userName = sayHello(gameTask);
   for (let i = 1; i <= gameRounds; i += 1) {
-    const value = makeQuestion();                 // todo: rename it
-    console.log(`Question: ${value.value}`);
+    const gameData = makeQuestion();
+    console.log(`Question: ${gameData.value}`);
     const answer = getAnswer(checkAnswer, wrongAnswerText);
-    const correctAnswer = value.correctAnswer;
+    const correctAnswer = gameData.correctAnswer;
     if (answer !== correctAnswer) {
       success = false;
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
