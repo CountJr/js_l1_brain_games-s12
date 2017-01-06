@@ -21,7 +21,7 @@ const makeQuestion = () => {
   const balanceNumber = makeBalanseNumber(normalNumber);
   return {
     value: `${normalNumber}`,
-    correctAnswer: String(balanceNumber),
+    correctAnswer: balanceNumber,
   };
 };
 
@@ -29,7 +29,7 @@ const checkAnswer = answer => !isNaN(answer);
 
 export default () => {
   game(
-    'Find the greatest common divisor of given numbers.',
+    'Balance the given number.',
     makeQuestion,
     checkAnswer,
     'Please, type a number',
