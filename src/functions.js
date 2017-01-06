@@ -1,4 +1,4 @@
 export const randomNumber = (min: number, max: number) =>
-  Math.floor(Math.random() * ((max + 1) - min));
+  Math.floor(min + (Math.random() * ((max - min) + 1)));
 
 export const foo = () => 0;
