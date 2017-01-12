@@ -8,7 +8,7 @@ const calculateGcd = (firstNumber, secondNumber) =>
     ? Math.abs(firstNumber)
     : calculateGcd(secondNumber, firstNumber % secondNumber));
 
-const makeQuestion = () => {
+const makeQuestion = (): {value: string, correctAnswer: string} => {
   const firstNumber = randomNumber(1, 99);
   const secondNumber = randomNumber(1, 99);
   return {
@@ -17,7 +17,7 @@ const makeQuestion = () => {
   };
 };
 
-const checkAnswer = answer => !isNaN(answer);
+const checkAnswer = (answer: string): boolean => !isNaN(answer);
 
 export default () => {
   game(

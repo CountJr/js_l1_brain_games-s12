@@ -14,7 +14,7 @@ const sayHello = (gameTask: string) => {
   return userName;
 };
 
-const getAnswer = (checkAnswer: Function, wrongAnswerText: string) => {
+const getAnswer = (checkAnswer: Function, wrongAnswerText: string): string => {
   for (;;) {
     const answer = readlineSync.question('Your answer: ');
     if (checkAnswer(answer)) {

@@ -6,11 +6,11 @@
     "url": "https://github.com/CountJr/js_l1_brain_games-s12/issues"
   },
   "homepage": "https://github.com/CountJr/js_l1_brain_games-s12#readme",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Brain Games",
   "main": "src/index.js",
   "bin": {
-    "brain-even": "./bin/brain-even.js",
+    "brain-even": "./src/bin/brain-even.js",
     "brain-calc": "./bin/brain-calc.js",
     "brain-gcd": "./bin/brain-gcd.js",
     "brain-balance": "./bin/brain-balance.js",

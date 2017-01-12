@@ -5,7 +5,7 @@ import { randomNumber } from './functions';
 
 const progressionLength = 10;
 
-const makeQuestion = () => {
+const makeQuestion = (): {value: string, correctAnswer: string} => {
   const startNumber = randomNumber(10, 99);
   const step = randomNumber(1, 9);
   const guessIndex = randomNumber(2, progressionLength - 2);
@@ -23,7 +23,7 @@ const makeQuestion = () => {
   };
 };
 
-const checkAnswer = answer => !isNaN(answer);
+const checkAnswer = (answer: string): boolean => !isNaN(answer);
 
 export default () => {
   game(

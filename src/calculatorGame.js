@@ -4,7 +4,7 @@ import game from './index';
 
 import { randomNumber } from './functions';
 
-const chooseArithmeticSign = () => {
+const chooseArithmeticSign = (): string => {
   switch (randomNumber(1, 3)) {
     case 1:
       return '+';
@@ -15,18 +15,18 @@ const chooseArithmeticSign = () => {
   }
 };
 
-const computeAnswer = (num1, num2, sign) => {
+const computeAnswer = (number1: number, number2: number, sign: string): number => {
   switch (sign) {
     case '+':
-      return num1 + num2;
+      return number1 + number2;
     case '-':
-      return num1 - num2;
+      return number1 - number2;
     default:
-      return num1 * num2;
+      return number1 * number2;
   }
 };
 
-const makeQuestion = () => {
+const makeQuestion = (): {value: string, correctAnswer: string} => {
   const firstNumber = randomNumber(1, 99);
   const secondNumber = randomNumber(1, 99);
   const arithmeticSign = chooseArithmeticSign();
@@ -36,7 +36,7 @@ const makeQuestion = () => {
   };
 };
 
-const checkAnswer = answer => !isNaN(answer);
+const checkAnswer = (answer: string): boolean => !isNaN(answer);
 
 export default () => {
   game(
