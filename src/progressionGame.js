@@ -25,7 +25,7 @@ const makeQuestion = (): {value: string, correctAnswer: string} => {
 
 const checkAnswer = (answer: string): boolean => !isNaN(answer);
 
-export default () => {
+export default (): void => {
   game(
     'What number is missing in this progression?',
     makeQuestion,

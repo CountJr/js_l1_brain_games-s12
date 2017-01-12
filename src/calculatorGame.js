@@ -27,7 +27,7 @@ const makeQuestion = (): {value: string, correctAnswer: string} => {
 
 const checkAnswer = (answer: string): boolean => !isNaN(answer);
 
-export default () => {
+export default (): void => {
   game(
     'Answer "yes" if number odd otherwise answer "no".',
     makeQuestion,

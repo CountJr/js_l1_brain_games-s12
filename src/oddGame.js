@@ -14,7 +14,7 @@ const makeQuestion = (): {value: string, correctAnswer: string} => {
 const checkAnswer = (answer: string): boolean =>
   answer === 'yes' || answer === 'no';
 
-export default () => {
+export default (): void => {
   game(
     'What is the result of the expression?',
     makeQuestion,
