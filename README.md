@@ -11,7 +11,7 @@ make run G=<game-name>
 
 ##Global instal:
 ```
-npm install -g brain-even
+sudo npm install -g brain-even
 
 <game-name>
 ```
