@@ -4,35 +4,24 @@ import game from './index';
 
 import { randomNumber } from './functions';
 
-const chooseArithmeticSign = (): string => {
+const makeSignAndResult = (number1: number, number2: number): {sing: string, result: number} => {
   switch (randomNumber(1, 3)) {
     case 1:
-      return '+';
+      return { sing: '+', result: number1 + number2 };
     case 2:
-      return '-';
+      return { sing: '-', result: number1 - number2 };
     default:
-      return '*';
-  }
-};
-
-const computeAnswer = (number1: number, number2: number, sign: string): number => {
-  switch (sign) {
-    case '+':
-      return number1 + number2;
-    case '-':
-      return number1 - number2;
-    default:
-      return number1 * number2;
+      return { sing: '*', result: number1 * number2 };
   }
 };
 
 const makeQuestion = (): {value: string, correctAnswer: string} => {
   const firstNumber = randomNumber(1, 99);
   const secondNumber = randomNumber(1, 99);
-  const arithmeticSign = chooseArithmeticSign();
+  const signAndResult = makeSignAndResult(firstNumber, secondNumber);
   return {
-    value: `${firstNumber} ${arithmeticSign} ${secondNumber}`,
-    correctAnswer: String(computeAnswer(firstNumber, secondNumber, arithmeticSign)),
+    value: `${firstNumber} ${signAndResult.sing} ${secondNumber}`,
+    correctAnswer: String(signAndResult.result),
   };
 };
 
@@ -43,6 +32,6 @@ export default () => {
     'Answer "yes" if number odd otherwise answer "no".',
     makeQuestion,
     checkAnswer,
-    'Answear must be a number',
+    'Please, type a number',
   );
 };
