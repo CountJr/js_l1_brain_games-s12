@@ -6,7 +6,7 @@
     "url": "https://github.com/CountJr/js_l1_brain_games-s12/issues"
   },
   "homepage": "https://github.com/CountJr/js_l1_brain_games-s12#readme",
-  "version": "0.1.7",
+  "version": "0.1.6",
   "description": "Brain Games",
   "main": "src/index.js",
   "bin": {
