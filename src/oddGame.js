@@ -16,9 +16,9 @@ const checkAnswer = (answer: string): boolean =>
 
 export default (): void => {
   game(
-    'What is the result of the expression?',
+    'Answer "yes" if number odd otherwise answer "no"',
     makeQuestion,
     checkAnswer,
-    'Please, type a number',
+    'Please, answer "yes" or "no"',
   );
 };
