@@ -3,7 +3,7 @@
 import game from './index';
 import { randomNumber } from './functions';
 
-const makeBalanseNumber = (number: string) => {
+const makeBalansedNumber = (number: string): string => {
   const sortedLine = number.split('').sort().join('');
   const lastIndex = sortedLine.length - 1;
   if (+sortedLine[lastIndex] - +sortedLine[0] <= 1) {
@@ -12,22 +12,21 @@ const makeBalanseNumber = (number: string) => {
   const firstNumber = [+sortedLine.split('')[0] + 1];
   const lastNumber = sortedLine.split('')[lastIndex] - 1;
   const middlePart = sortedLine.slice(1, lastIndex);
-  const result = firstNumber.concat(middlePart, lastNumber).join('');
-  return makeBalanseNumber(result);
+  return makeBalansedNumber([firstNumber, middlePart, lastNumber].join(''));
 };
 
-const makeQuestion = () => {
+const makeQuestion = (): {value: string, correctAnswer: string} => {
   const normalNumber = String(randomNumber(100, 9999));
-  const balanceNumber = makeBalanseNumber(normalNumber);
+  const balancedNumber = makeBalansedNumber(normalNumber);
   return {
     value: `${normalNumber}`,
-    correctAnswer: balanceNumber,
+    correctAnswer: balancedNumber,
   };
 };
 
-const checkAnswer = answer => !isNaN(answer);
+const checkAnswer = (answer: string): boolean => !isNaN(answer);
 
-export default () => {
+export default (): void => {
   game(
     'Balance the given number.',
     makeQuestion,

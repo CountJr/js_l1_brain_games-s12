@@ -3,7 +3,7 @@
 import game from './index';
 import { randomNumber } from './functions';
 
-const makeQuestion = () => {
+const makeQuestion = (): {value: string, correctAnswer: string} => {
   const question = randomNumber(1, 99);
   return {
     value: question,
@@ -11,14 +11,14 @@ const makeQuestion = () => {
   };
 };
 
-const checkAnswer = answer =>
+const checkAnswer = (answer: string): boolean =>
   answer === 'yes' || answer === 'no';
 
-export default () => {
+export default (): void => {
   game(
-    'What is the result of the expression?',
+    'Answer "yes" if number odd otherwise answer "no"',
     makeQuestion,
     checkAnswer,
-    'Please, type a number',
+    'Please, answer "yes" or "no"',
   );
 };

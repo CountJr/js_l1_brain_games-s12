@@ -3,12 +3,12 @@
 import game from './index';
 import { randomNumber } from './functions';
 
-const calculateGcd = (firstNumber, secondNumber) =>
+const calculateGcd = (firstNumber: number, secondNumber: number): number =>
   (secondNumber === 0
     ? Math.abs(firstNumber)
     : calculateGcd(secondNumber, firstNumber % secondNumber));
 
-const makeQuestion = () => {
+const makeQuestion = (): {value: string, correctAnswer: string} => {
   const firstNumber = randomNumber(1, 99);
   const secondNumber = randomNumber(1, 99);
   return {
@@ -17,9 +17,9 @@ const makeQuestion = () => {
   };
 };
 
-const checkAnswer = answer => !isNaN(answer);
+const checkAnswer = (answer: string): boolean => !isNaN(answer);
 
-export default () => {
+export default (): void => {
   game(
     'Find the greatest common divisor of given numbers.',
     makeQuestion,

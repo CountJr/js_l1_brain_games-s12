@@ -4,45 +4,34 @@ import game from './index';
 
 import { randomNumber } from './functions';
 
-const chooseArithmeticSign = () => {
+const makeSignAndResult = (number1: number, number2: number): {sing: string, result: number} => {
   switch (randomNumber(1, 3)) {
     case 1:
-      return '+';
+      return { sing: '+', result: number1 + number2 };
     case 2:
-      return '-';
+      return { sing: '-', result: number1 - number2 };
     default:
-      return '*';
+      return { sing: '*', result: number1 * number2 };
   }
 };
 
-const computeAnswer = (num1, num2, sign) => {
-  switch (sign) {
-    case '+':
-      return num1 + num2;
-    case '-':
-      return num1 - num2;
-    default:
-      return num1 * num2;
-  }
-};
-
-const makeQuestion = () => {
+const makeQuestion = (): {value: string, correctAnswer: string} => {
   const firstNumber = randomNumber(1, 99);
   const secondNumber = randomNumber(1, 99);
-  const arithmeticSign = chooseArithmeticSign();
+  const signAndResult = makeSignAndResult(firstNumber, secondNumber);
   return {
-    value: `${firstNumber} ${arithmeticSign} ${secondNumber}`,
-    correctAnswer: String(computeAnswer(firstNumber, secondNumber, arithmeticSign)),
+    value: `${firstNumber} ${signAndResult.sing} ${secondNumber}`,
+    correctAnswer: String(signAndResult.result),
   };
 };
 
-const checkAnswer = answer => !isNaN(answer);
+const checkAnswer = (answer: string): boolean => !isNaN(answer);
 
-export default () => {
+export default (): void => {
   game(
     'Answer "yes" if number odd otherwise answer "no".',
     makeQuestion,
     checkAnswer,
-    'Answear must be a number',
+    'Please, type a number',
   );
 };
