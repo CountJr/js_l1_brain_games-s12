@@ -44,6 +44,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.16.3",
     "cli-agent": "CountJr/cli-agent",
+    "codeclimate-test-reporter": "^0.4.0",
     "eslint": "^3.12.2",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-flowtype": "^2.29.2",
@@ -67,6 +68,9 @@
   },
   "jest": {
     "testRegex": "(/__tests__/.*|(\\.|/)(est|spec))\\.jsx?$",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "collectCoverage": "true",
+    "coverageDirectory": "tmp",
+    "coverageReporters": ["lcov"]
   }
 }
