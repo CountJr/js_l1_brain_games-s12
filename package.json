@@ -34,22 +34,26 @@
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",
+    "babel-jest": "^18.0.0",
     "babel-plugin-syntax-flow": "^6.18.0",
     "babel-plugin-transform-flow-strip-types": "^6.21.0",
     "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-polyfill": "^6.20.0",
     "babel-preset-env": "^1.1.4",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.16.3",
+    "cli-agent": "CountJr/cli-agent",
     "eslint": "^3.12.2",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-flowtype": "^2.29.2",
     "eslint-plugin-import": "^2.2.0",
     "flow-bin": "^0.37",
-    "flow-typed": "^2.0.0"
+    "flow-typed": "^2.0.0",
+    "jest": "^18.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "babel-node": "babel-node",
     "flow": "flow",
     "flow-typed": "flow-typed",
@@ -60,5 +64,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CountJr/js_l1_brain_games-s12.git"
+  },
+  "jest": {
+    "testRegex": "(/__tests__/.*|(\\.|/)(est|spec))\\.jsx?$",
+    "testEnvironment": "node"
   }
 }

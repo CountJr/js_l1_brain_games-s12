@@ -29,7 +29,7 @@ const checkAnswer = (answer: string): boolean => !isNaN(answer);
 
 export default (): void => {
   game(
-    'Answer "yes" if number odd otherwise answer "no".',
+    'What is the result of the expression?',
     makeQuestion,
     checkAnswer,
     'Please, type a number',
