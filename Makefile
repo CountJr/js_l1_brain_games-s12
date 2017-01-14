@@ -5,7 +5,7 @@ run:
 	npm run babel-node -- ./src/bin/$(G)
 
 lint:
-	npm run eslint -- src tests
+	npm run eslint -- src __tests__
 
 install:
 	install-deps install-flow-typed

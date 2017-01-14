@@ -5,25 +5,27 @@ import { randomNumber } from './functions';
 
 const progressionLength = 10;
 
-const makeQuestion = (): {value: string, correctAnswer: string} => {
-  const startNumber = randomNumber(10, 99);
-  const step = randomNumber(1, 9);
-  const guessIndex = randomNumber(2, progressionLength - 2);
-  const result = [];
-  for (let i = 0; i < progressionLength; i += 1) {
-    if (i !== guessIndex) {
-      result[i] = startNumber + (step * i);
-    } else {
-      result[i] = '..';
+export const makeQuestion =
+  (randomFunction: Function = randomNumber):
+  {value: string, correctAnswer: string} => {
+    const startNumber = randomFunction(10, 99);
+    const step = randomFunction(1, 9);
+    const guessIndex = randomFunction(2, progressionLength - 2);
+    const result = [];
+    for (let i = 0; i < progressionLength; i += 1) {
+      if (i !== guessIndex) {
+        result[i] = startNumber + (step * i);
+      } else {
+        result[i] = '..';
+      }
     }
-  }
-  return {
-    value: `${result.join(' ')}`,
-    correctAnswer: String(startNumber + (step * guessIndex)),
+    return {
+      value: `${result.join(' ')}`,
+      correctAnswer: String(startNumber + (step * guessIndex)),
+    };
   };
-};
 
-const checkAnswer = (answer: string): boolean => !isNaN(answer);
+export const checkAnswer = (answer: string): boolean => !isNaN(answer);
 
 export default (): void => {
   game(
