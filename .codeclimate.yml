@@ -6,12 +6,9 @@ engines:
       languages:
       - javascript
   eslint:
-    enabled: true
+    enabled: false
   fixme:
     enabled: true
-env:
-  es6: true
-  node: true
 ratings:
   paths:
   - "**.js"
