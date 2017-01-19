@@ -9,11 +9,14 @@ engines:
     enabled: true
   fixme:
     enabled: true
+env:
+  es6: true
+  node: true
 ratings:
   paths:
   - "**.js"
   - "**.jsx"
 exclude_paths:
-- __test__/**/*
+- __tests__/
 after_success:
 - codeclimate < ./tmp/lcov.info
