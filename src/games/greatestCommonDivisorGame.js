@@ -21,11 +21,10 @@ export const makeQuestion =
 
 export const checkAnswer = (answer: string): boolean => !isNaN(answer);
 
-export default (): void => {
+export default (): void =>
   game(
     'Find the greatest common divisor of given numbers.',
     makeQuestion,
     checkAnswer,
     'Please, type a number',
   );
-};

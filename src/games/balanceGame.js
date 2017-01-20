@@ -31,11 +31,10 @@ export const checkAnswer =
   (answer: string): boolean =>
     !isNaN(answer);
 
-export default (): void => {
+export default (): void =>
   game(
     'Balance the given number.',
     makeQuestion,
     checkAnswer,
     'Please, type a number',
   );
-};

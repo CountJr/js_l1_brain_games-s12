@@ -17,11 +17,11 @@ export const checkAnswer =
   (answer: string): boolean =>
     answer === 'yes' || answer === 'no';
 
-export default (): void => {
+export default (): void =>
   game(
     'Answer "yes" if number odd otherwise answer "no"',
     makeQuestion,
     checkAnswer,
     'Please, answer "yes" or "no"',
   );
-};
+

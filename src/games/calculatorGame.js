@@ -33,11 +33,10 @@ export const checkAnswer =
   (answer: string): boolean =>
     !isNaN(answer);
 
-export default (): void => {
+export default (): void =>
   game(
     'What is the result of the expression?',
     makeQuestion,
     checkAnswer,
     'Please, type a number',
   );
-};
