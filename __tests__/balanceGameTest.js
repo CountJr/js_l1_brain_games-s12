@@ -1,4 +1,4 @@
-import { makeQuestion, checkAnswer } from '../src/balanceGame';
+import { makeQuestion, checkAnswer } from '../src/games/balanceGame';
 
 test('oddGame makeQuestion test', () => {
   expect(makeQuestion(() => 5934)).toEqual({ value: '5934', correctAnswer: '5556' });

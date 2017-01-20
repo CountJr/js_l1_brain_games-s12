@@ -1,4 +1,4 @@
-import { makeQuestion, checkAnswer } from '../src/greatestCommonDivisorGame';
+import { makeQuestion, checkAnswer } from '../src/games/greatestCommonDivisorGame';
 
 function* testGenerator(arr) {
   yield arr[0];

@@ -1,7 +1,7 @@
 // @flow
 
-import game from './index';
-import { randomNumber } from './functions';
+import game from '../index';
+import { randomNumber } from '../functions';
 
 const makeBalansedNumber =
   (number: string): string => {

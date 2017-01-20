@@ -1,4 +1,4 @@
-import { makeQuestion, checkAnswer } from '../src/calculatorGame';
+import { makeQuestion, checkAnswer } from '../src/games/calculatorGame';
 
 function* testGenerator(arr) {
   yield arr[0];

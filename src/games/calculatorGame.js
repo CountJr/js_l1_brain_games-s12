@@ -1,8 +1,8 @@
 // @flow
 
-import game from './index';
+import game from '../index';
 
-import { randomNumber } from './functions';
+import { randomNumber } from '../functions';
 
 const makeSignAndResult =
   (number1: number, number2: number, randomFunction: Function):

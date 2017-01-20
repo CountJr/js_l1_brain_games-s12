@@ -2,6 +2,6 @@
 
 // @flow
 
-import playGcdGame from '../greatestCommonDivisorGame';
+import playGcdGame from '../games/greatestCommonDivisorGame';
 
 playGcdGame();

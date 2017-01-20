@@ -2,6 +2,6 @@
 
 // @flow
 
-import playOddGame from '../oddGame';
+import playOddGame from '../games/oddGame';
 
 playOddGame();

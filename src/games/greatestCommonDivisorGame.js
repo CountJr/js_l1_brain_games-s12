@@ -1,7 +1,7 @@
 // @flow
 
-import game from './index';
-import { randomNumber } from './functions';
+import game from '../index';
+import { randomNumber } from '../functions';
 
 const calculateGcd = (firstNumber: number, secondNumber: number): number =>
   (secondNumber === 0

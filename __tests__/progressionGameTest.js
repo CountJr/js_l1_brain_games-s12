@@ -1,5 +1,5 @@
 
-import { makeQuestion, checkAnswer } from '../src/progressionGame';
+import { makeQuestion, checkAnswer } from '../src/games/progressionGame';
 
 function* testGenerator(arr) {
   yield arr[0];
